@@ -1,0 +1,16 @@
+requests
+tqdm
+pymysql
+pymongo
+numpy
+pandas
+matplotlib
+scikit-learn
+PyGithub
+cryptography
+textstat
+jupyterlab
+keras
+xgboost
+json
+lime
