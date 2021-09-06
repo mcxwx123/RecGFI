@@ -1,0 +1,1 @@
+# RecGFI is freely available for non-commercial purposes.
