@@ -63,7 +63,7 @@ def load_raw_data(file_path,vectorizer,dataset_index):
 
 
 
-def load_train_test_data(file_path1,vectorizer,dataset_index,fold,is_raw=True):
+def load_train_test_data(file_path1,vectorizer,dataset_index,fold,sorted,crosspro):
 
     T= load_raw_data(file_path1,vectorizer,dataset_index)
     T.dropna(inplace=True)

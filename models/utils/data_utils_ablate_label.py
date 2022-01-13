@@ -16,7 +16,7 @@ def unfold(df,s):
     return pd.DataFrame(lst)
 
 
-def load_raw_data(file_path,vectorizer,dataset_index,test_size=0.1):
+def load_raw_data(file_path,vectorizer,dataset_index):
     if dataset_index==2:
         df = pd.read_pickle(file_path)
         
@@ -88,7 +88,7 @@ def load_raw_data(file_path,vectorizer,dataset_index,test_size=0.1):
     return T
 
 
-def load_train_test_data(file_path1,vectorizer,dataset_index,fold,is_raw=True):
+def load_train_test_data(file_path1,vectorizer,dataset_index,fold,sorted,crosspro):
 
     T= load_raw_data(file_path1,vectorizer,dataset_index)
     T.dropna(inplace=True)

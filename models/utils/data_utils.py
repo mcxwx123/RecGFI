@@ -1,8 +1,4 @@
 import pandas as pd
-import numpy as np
-from keras.preprocessing.sequence import pad_sequences
-from sklearn.model_selection import train_test_split
-
 
 def unfold(df,s):
     df=df[s].values
@@ -15,16 +11,19 @@ def unfold(df,s):
 
     return pd.DataFrame(lst)
 
-
-def load_raw_data(file_path,vectorizer,dataset_index):
+def load_raw_data(file_path,vectorizer,dataset_index,sorted,crosspro):
     if dataset_index==2:
         df = pd.read_pickle(file_path)
-        
+        if sorted==1:
+            df=df.sort_values(by=['issuet'],ascending=True)
         title=pd.DataFrame(vectorizer.get_text_feature( df['title'].values))
         body=pd.DataFrame(vectorizer.get_text_feature( df['body'].values))
         comment_text=pd.DataFrame(vectorizer.get_text_feature( df['comment'].values))
-
-        issue_num=df[["LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
+        if crosspro==0:
+            issue_num=df[["LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
+                "coleman_liau_index","flesch_reading_ease","flesch_kincaid_grade","automated_readability_index"]]
+        else:
+            issue_num=df[["proid","LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
                 "coleman_liau_index","flesch_reading_ease","flesch_kincaid_grade","automated_readability_index"]]
 
         pro=df[[ "ownerallpr","ownerpr","ownercmt","ownerallcmt","ownerpronum","ownerstar","ownerfoll","owneralliss","owneriss","ownerissnewratio","ownerissnewnum",
@@ -36,7 +35,6 @@ def load_raw_data(file_path,vectorizer,dataset_index):
         le=unfold(df,"labelevent")
         event=unfold(df,"event").iloc[:,11:36]
         event_experience=unfold(df,"event").iloc[:,:11]
-
 
         T=pd.concat([title,body,comment_text,issue_num,pro,rpt,comnum,lc,le,event,event_experience],axis=1)
         c=[]
@@ -62,12 +60,15 @@ def load_raw_data(file_path,vectorizer,dataset_index):
 
     elif dataset_index==1:
         df = pd.read_pickle(file_path)
-        
+        if sorted==1:
+            df=df.sort_values(by=['issuet'],ascending=True)
         title=pd.DataFrame(vectorizer.get_text_feature( df['title'].values))
         body=pd.DataFrame(vectorizer.get_text_feature( df['body'].values))
-    
-        
-        issue_num=df[["LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
+        if crosspro==0:
+            issue_num=df[["LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
+                "coleman_liau_index","flesch_reading_ease","flesch_kincaid_grade","automated_readability_index"]]
+        else:
+            issue_num=df[["proid","LengthOfTitle","LengthOfDescription","NumOfUrls","NumOfPics","NumOfCode","PositiveWords","NegativeWords",
                 "coleman_liau_index","flesch_reading_ease","flesch_kincaid_grade","automated_readability_index"]]
 
         pro=df[[ "ownerallpr","ownerpr","ownercmt","ownerallcmt","ownerpronum","ownerstar","ownerfoll","owneralliss","owneriss","ownerissnewratio","ownerissnewnum",
@@ -96,34 +97,37 @@ def load_raw_data(file_path,vectorizer,dataset_index):
 
 
 
-def load_train_test_data(file_path1,vectorizer,dataset_index,fold,is_raw=True):
-
-    T= load_raw_data(file_path1,vectorizer,dataset_index)
+def load_train_test_data(file_path1,vectorizer,dataset_index,fold,sorted,crosspro):
+    T= load_raw_data(file_path1,vectorizer,dataset_index,sorted,crosspro)
     T.dropna(inplace=True)
-    p_train_split1=int((fold/10)*T.shape[0])
-    p_train_split2=int((fold/10+0.1)*T.shape[0])
 
-
-    train_data1=T.iloc[:p_train_split1]
-    train_data2=T.iloc[p_train_split2:]
-    train_data=pd.concat([train_data1,train_data2],axis=0)
-
-    test_data=T.iloc[p_train_split1:p_train_split2]
+    if crosspro==0:
+        p_train_split1=int((fold/10)*T.shape[0])
+        p_train_split2=int((fold/10+0.1)*T.shape[0])
+        train_data1=T.iloc[:p_train_split1]
+        train_data2=T.iloc[p_train_split2:]
+        train_data=pd.concat([train_data1,train_data2],axis=0)
+        test_data=T.iloc[p_train_split1:p_train_split2]
+    else:
+        proid_lst=list(set(T['proid'].values))
+        proid_lst.sort()
+        p_train_split1=int((fold/10)*len(proid_lst))
+        p_train_split2=int((fold/10+0.1)*len(proid_lst))
+        train_pro=proid_lst[:p_train_split1]+proid_lst[p_train_split2:]
+        test_pro=proid_lst[p_train_split1:p_train_split2]
+        train_data=T[T['proid'].isin(train_pro)]
+        test_data=T[T['proid'].isin(test_pro)]
+        del test_data['proid']
+        del train_data['proid']
 
     p_train = train_data[train_data.labels == 1]
     p_train = p_train.sample(frac=15000/p_train.shape[0],replace=True,random_state=0)
-
     n_train = train_data[train_data.labels == 0]
     n_train=n_train.sample(frac=15000/n_train.shape[0],replace=True,random_state=0)
-
     train_data=pd.concat([p_train,n_train],ignore_index=True)
     train_data=train_data.sample(frac=1, random_state=0)
-
-
-
     y_train=train_data['labels']
     y_test=test_data['labels']
-
     del train_data['labels']
     del test_data['labels']
     X_train=train_data

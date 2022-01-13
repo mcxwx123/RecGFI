@@ -2,6 +2,8 @@ import pandas as pd
 import re
 import textstat
 import numpy as np
+import json
+import os
 def count_code_number(str):
     p=re.compile(r"```.+?```",flags=re.S)
     return len(p.findall(str))
@@ -18,7 +20,6 @@ def count_url(str):
         return True
     p=re.compile(r"http[:/\w\.]+")
     lst=list(filter(notPic,p.findall(str)))
-
     return len(lst)
 
 def count_pic(str):
@@ -46,7 +47,8 @@ def count_text_len(str):
 
 
 def get_label(clscmt):
-    if clscmt<threshold:
+    global threshold
+    if clscmt<threshold+1:
         return 1
     return 0
 
@@ -83,12 +85,13 @@ def count_negative_words(str):
     return count
 
 def generateRate(lst):
+    global threshold
     c1=0
     c2=0
     for i in lst:
         if i!= None:
             c1+=1
-            if i<threshold:
+            if i<threshold+1:
                 c2+=1
 
     if c1==0:
@@ -97,27 +100,30 @@ def generateRate(lst):
         return c2/c1
         
 def generateNum(lst):
+    global threshold
     c1=0    
     for i in lst:
         if i!= None:
-            if i<threshold:
+            if i<threshold+1:
                 c1+=1
     return c1
 
 def ifrptnew(rptcmt):
-    if rptcmt<threshold:
+    global threshold
+    if rptcmt<threshold+1:
         return 1
     return 0
 
 
 def getratio(lst):
+    global threshold
     if lst is None:
         return 0
     else:
         lst=[d for d in lst if d is not None]
         if lst==[]:
             return 0
-        pnum=sum(d<threshold for d in lst)
+        pnum=sum(d<threshold+1 for d in lst)
         nnum=len(lst)-pnum
         if pnum==0:
             pnum=0.1
@@ -128,13 +134,18 @@ def getissnum(lst):
         return 0
     else:
         return len(lst)
-if __name__=="__main__":
-    Threshold=[1,2,3,4,5]
-    data=np.load('data.npy',allow_pickle=True)
-    data=data.tolist()
+
+def data_preprocess1():
+    global threshold
+    Threshold=[0,1,2,3,4]
+    current_work_dir = os.path.dirname(__file__) 
+    with open(current_work_dir+'/issuedata.json') as f:
+        issuestr = json.load(f)
+    issuedic = json.loads(issuestr)
+    issuedata = issuedic['issuedata']
     lst=[]
-    for i in range(len(data)):
-        lst.append(data[i][0])
+    for i in range(len(issuedata)):
+        lst.append(issuedata[i][0])
   
     for threshold in Threshold:
         df=pd.DataFrame(lst)
@@ -168,7 +179,9 @@ if __name__=="__main__":
 
         df["rptnpratio"]=df["rptisscmtlist"].apply(getratio)
         df["rptissnum"]=df["rptisscmtlist"].apply(getissnum)     
-
-        df.to_pickle("dataset1_threshold_"+str(threshold)+".pkl")
+        weight_path ="dataset1_threshold_"+str(threshold)+".pkl"
+        current_work_dir = os.path.dirname(__file__)  
+        weight_path = os.path.join(current_work_dir, weight_path)
+        df.to_pickle(weight_path)
 
         
