@@ -1,6 +1,6 @@
 # Replication Package for ICSE 2022 Paper "Recommending Good First Issues in GitHub OSS Projects"
 
-This is the replication package for the ICSE 2021 paper *Recommending Good First Issues in GitHub OSS Projects*. It contains the collected dataset which can be used for future work and can be used to replicate experimental results in the paper. The replication package consists of a dataset including data about features and status (if an issue is closed by a newcomer) of issues from 100 popular and beginner-friendly projects, and scripts to predict wheyher issues will be solved by newcomers. People who want to reproduce the results in the paper need to properly configure an Anaconda environment to run the scripts or use the VirtualBox VM Image we provided.
+This is the replication package for the ICSE 2021 paper *Recommending Good First Issues in GitHub OSS Projects*. It contains the collected dataset which can be used for future work and can be used to replicate experimental results in the paper. The replication package consists of a dataset including data about features and status (if an issue is closed by a newcomer) of issues from 100 popular and beginner-friendly projects, and scripts to predict wheyher issues will be solved by newcomers. People who want to reproduce the results in the paper need to properly configure an Anaconda environment to run the scripts or use the VirtualBox VM Image we provided at https://pkueducn-my.sharepoint.com/:u:/g/personal/2001111301_stu_pku_edu_cn/EVhPBeaxab1KnxbE5OSF05YBptz4MIy2eHbWoQe9nwb5bA. The package is stored in the git repository https://github.com/mcxwx123/RecGFI and permanently archived at https://zenodo.org/record/5881117#.YeliUEBBwlI.
 
 ## Introduction
 
@@ -37,7 +37,7 @@ Then clone this git repository or download the repository archive from Zenodo. Y
 
 ### Using the VirtualBox VM Image
 
-To easy the burden to build the required environment, we supply a VirtualBox VM Image to replicate experimental results quickly and easily. Register and open it with VirtualBoxVM. The passport is icse22ae. You can see a folder named `RecGFI` in the Desktop. Open and run RecGFI/Main.py with VSCode or Terminal to get the results for RQ1. Then execute the command `jupyter notebook` and run `real_world_evaluation_results.ipynb` to get the results for RQ2. Note that this way for replication is non-persistent. If the VM Image is not available, please switch to other ways.
+To easy the burden to build the required environment, we supply a VirtualBox VM Image to replicate experimental results quickly and easily. You can download the VM Image from [the One Drive link](https://dreamok-my.sharepoint.com/:f:/g/personal/hehao_wowvv_com/EquUX-BJCjhOllxiNxA0ptkBDHTbDufze25oTK5SJOvlXg?e=bDJdUd). Then register and open it with VirtualBoxVM. The passport is icse22ae. You can see a folder named `RecGFI` in the Desktop. Open and run `RecGFI/Main.py` with VSCode or Terminal to get the results for RQ1. Then execute the command `jupyter notebook` and run `real_world_evaluation_results.ipynb` to get the results for RQ2. Note that this way for replication is non-persistent. If the VM Image is not available, please switch to other ways.
 
 ## Replicating Results
 
