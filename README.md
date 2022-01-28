@@ -1,6 +1,6 @@
 # Replication Package for ICSE 2022 Paper "Recommending Good First Issues in GitHub OSS Projects"
 
-This is the replication package for the ICSE 2022 paper *Recommending Good First Issues in GitHub OSS Projects*. It contains: 1) a dataset of 53,510 resolved issues; and 2) scripts to train different modules and reproduce evaluation results, as described in the paper.
+This is the replication package for the ICSE 2022 paper *Recommending Good First Issues in GitHub OSS Projects*. It contains: 1) a dataset of 53,510 resolved issues; and 2) scripts to train different models and reproduce evaluation results, as described in the paper.
 
 The package is stored in the git repository https://github.com/mcxwx123/RecGFI and permanently archived at [Zenodo](https://zenodo.org/record/5881117). To reproduce results in the paper, it is necessary to properly configure an Anaconda environment to run the scripts or use the VirtualBox VM Image we provide at [Zenodo](https://zenodo.org/record/5881117). 
 
@@ -8,7 +8,7 @@ The package is stored in the git repository https://github.com/mcxwx123/RecGFI a
 
 In the ICSE 2022 paper, we propose **RecGFI**, an effective practical approach for automated recommendation of **Good First Issues** to OSS newcomers, which can be used to relieve maintainers’ burden and help newcomers onboard. 
 
-For this purpose, we locate 100 newcomer-friendly GitHub projects, use GHTorrent and GitHub RESTAPI to restore historical states of all their issues, and find issues resolved by newcomers. With the dataset, we check the performance of RecGFI under a variety of settings. Additionally, we collect latest open issues from the 100 projects and predict whether they are GFIs. We report potential GFIs to project maintainers and record the received responses and the state of these issues after several months.
+For this purpose, we locate 100 newcomer-friendly GitHub projects, use GHTorrent and GitHub REST API to restore historical states of all their issues, and find issues resolved by newcomers. With the dataset, we check the performance of RecGFI under a variety of settings. Additionally, we collect latest open issues from the 100 projects and predict whether they are GFIs. We report potential GFIs to project maintainers and record the received responses and the state of these issues after several months.
 
 All automated processing is implemented using Python in an Anaconda environment and the detailed results can be found in our paper. We hope the dataset and scripts in this replication package can be leveraged to facilitate further studies in recommending issues for newcomers and other related fields. We intend to claim the **Artifacts Available** badge and the **Artifacts Evaluated - Reusable** badge for our replication package. 
 
