@@ -40,9 +40,10 @@ To ease the burden to build the required environment, we supply a VirtualBox VM 
 
 Run `Main.py` to get the performance results for RQ1 in our paper. During this process, some data preprocessing will take place. We leave the preprocessed data in the `RecGFI/data` folder. You can comment out the function calls `data_preprocess1()` and `data_preprocess2()` in `Main.py` if the preprocessed file already exists. The whole script can **consume up to 6GB memory and take up to four hours to finish**.
 
-You can get five CSV files in the folder `RecGFI/models` after running `Main.py`. They contain all tables for RQ1 in the paper. 
+You can get five CSV files in the folder `RecGFI/models` after running `Main.py`. They contain all tables for RQ1 in the paper.
 
-As for RQ2 in the paper, you can check the statistics of issue features in our dataset with `RecGFI/data/Statistics.png`. 
+As for RQ2 in the paper, you can check the statistics of issue features in our dataset with `RecGFI/data/Statistics.png`. After running `Main.py`, the wordclouds of issues is shown in `RecGFI/wordcloud0.png` and `RecGFI/wordcloud1.png`. 
+
+People can run `RecGFI/LIME_for_RecGFI/Run_lime.py` to process the data for drawing figures in RQ2. After running `Run_lime.py`, one can run `.m` files in `RecGFI/LIME_for_RecGFI/draw_figs` with Matlab 2020b or higher version to draw the figures. Since Matlab is not a commercial free software and according to the requirments for the "evaluated" badge which said "Proprietary artifacts need not be included", these results is not necessarily reproducible.
 
 As for RQ3, we save the status of involved issues in `real_world_evaluation/prediction_real_world_issues.csv`. 
-
