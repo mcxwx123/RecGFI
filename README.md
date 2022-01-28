@@ -26,11 +26,7 @@ We use Anaconda for Python development. The first step is to configure a new Con
 ```shell script
 conda create -n RecGFI python=3.8
 conda activate RecGFI
-# We originally used requirements.txt as our dependency specification file,
-# but in a clean installation, the installed packages may be later versions and contain breaking changes,
-# so we created a lock file requirements-lock.txt to replicate our environment
 python -m pip install -r requirements-lock.txt
-# python -m pip install -r requirements.txt
 ```
 
 Then clone this git repository or download the repository archive from Zenodo. You can find the raw dataset for RQ1 at `RecGFI/data/issuedata.json`. We record features and states of each issue at two time points. You can run Main.py to get the simulation results for RQ1 in our paper. We leave the preprocessed data in the file `RecGFI/data`. If you want to save time in preprocessing data, you can comment the functions `data_preprocess1()` and `data_preprocess2()`. As for RQ2(i.e. RQ3 in the paper), we store the status of the latest issues in prediction_real_world_issues.csv. You can execute the command `jupyter notebook` in the path RecGFI/real_world_evaluation to open a website and run `real_world_evaluation_results.ipynb`. Thus you can get statistics of the latest issues.
