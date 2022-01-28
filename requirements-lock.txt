@@ -14,3 +14,6 @@ typing~=3.7.4.3
 datetime~=4.3
 pathlib~=1.0.1
 tensorflow~=2.7.0
+multidict~=6.0.2
+lime~=0.2.0.1
+wordcloud~=1.8.1
