@@ -44,7 +44,7 @@ Switch your working directory to `RecGFI`. Run `Main.py` to get the performance 
 python Main.py
 ```
 
-During this process, some data preprocessing will take place. We leave the preprocessed data in the `RecGFI/data` folder. You can comment out the function calls `data_preprocess1()` and `data_preprocess2()` in `Main.py` if the preprocessed file already exists. The whole script can **consume up to 6GB memory and take up to five hours to finish**. It may generate some warning messages about logisitic regression but it is expected.
+During this process, some data preprocessing will take place. We leave the preprocessed data in the `RecGFI/data` folder. You can comment out the function calls `data_preprocess1()` and `data_preprocess2()` in `Main.py` if the preprocessed file already exists. The whole script can **consume up to 6GB memory and take about five to twelve hours to finish**. It may generate some warning messages about logisitic regression but it is expected.
 
 After running `Main.py`, you can get five CSV files in the folder `RecGFI/models`. They contain all tables for **RQ1** in the paper.
 
