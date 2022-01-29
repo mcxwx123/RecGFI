@@ -34,7 +34,7 @@ If you download repository archive from Zenodo, you can already find the issue d
 
 ### Using the VirtualBox VM Image
 
-To ease the burden to build the required environment, we supply a VirtualBox VM Image to replicate experimental results quickly and easily. You can download the VM Image from Zenodo. Then register and open it with VirtualBox VM. The password is icse22ae. You can see a folder named `RecGFI` in the Desktop with everything already configured.
+To ease the burden to build the required environment, we supply a VirtualBox VM Image to replicate experimental results quickly and easily. You can download the VM Image from Zenodo. Then register and open it with VirtualBox VM. The password is icse22ae. You can see a folder named `RecGFI` in the Desktop with everything already configured. In a terminal, remember to use `conda activate RecGFI` to activate the corresponding Conda environment before executing the scripts below.
 
 ## Replicating Results
 
