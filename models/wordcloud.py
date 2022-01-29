@@ -5,12 +5,9 @@ import pandas as pd
 import re
 import multidict as multidict
 from collections import Counter
-import numpy as np
 import json
 import datetime
 import os
-import re
-import matplotlib.pyplot as plt
 
 def removePunctuation(text):
     text = re.sub(r'[{}]+'.format('!,;:?`"\'、，；'),' ',text)
