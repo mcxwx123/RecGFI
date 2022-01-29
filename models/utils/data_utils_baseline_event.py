@@ -1,8 +1,4 @@
 import pandas as pd
-import numpy as np
-from keras.preprocessing.sequence import pad_sequences
-from sklearn.model_selection import train_test_split
-
 
 def unfold(df,s):
     df=df[s].values
