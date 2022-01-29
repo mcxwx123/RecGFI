@@ -8,7 +8,7 @@ from collections import Counter
 import json
 import datetime
 import os
-
+plt.switch_backend('agg')
 def removePunctuation(text):
     text = re.sub(r'[{}]+'.format('!,;:?`"\'、，；'),' ',text)
     return text.strip()
