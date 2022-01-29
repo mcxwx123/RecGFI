@@ -30,7 +30,7 @@ conda activate RecGFI
 python -m pip install -r requirements-lock.txt
 ```
 
-If you download repository archive from Zenodo, you can already find the issue dataset at `RecGFI/data/issuedata.json`.  However, it is too large (1.6GB) for git, so if you clone from GitHub, please download this file separately from Zenodo and put it there.
+If you download repository archive from Zenodo, you can already find the issue dataset at `RecGFI/data/issuedata.json`. However, it is too large (1.6GB) for git, so if you clone from GitHub, please download this file separately from Zenodo and put it there.
 
 ### Using the VirtualBox VM Image
 
@@ -38,7 +38,7 @@ To ease the burden to build the required environment, we supply a VirtualBox VM 
 
 ## Replicating Results
 
-Switch your working directory to `RecGFI`. Run `Main.py` to get the performance results for RQ1 in our paper. 
+Switch your working directory to `RecGFI`. Run `Main.py` to get the performance results for **RQ1** in our paper. 
 
 ```shell
 python Main.py
@@ -48,7 +48,7 @@ During this process, some data preprocessing will take place. We leave the prepr
 
 After running `Main.py`, you can get five CSV files in the folder `RecGFI/models`. They contain all tables for **RQ1** in the paper.
 
-As for **RQ2**, you can check the statistics of issue features in our dataset with `RecGFI/data/Statistics.png`. After running `Main.py`, the wordclouds of issues is shown in `RecGFI/wordcloud0.png` and `RecGFI/wordcloud1.png`. You can also run `RecGFI/intepretation/Run_lime.py` which will generate the data for drawing figures in RQ2. 
+As for **RQ2**, you can check the statistics of issue features in our dataset with `RecGFI/data/Statistics.png`. After running `Main.py`, the wordclouds of issues is shown in `RecGFI/wordcloud0.png` and `RecGFI/wordcloud1.png`. You can also run `RecGFI/intepretation/Run_lime.py` which will generate the data for drawing figures in **RQ2**. 
 
 ```shell
 cd intepretation
