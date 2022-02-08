@@ -71,6 +71,7 @@ The scrips to reproduce RQ1 results of the paper are included in `RecGFI/models`
 The collected responces from real Github issues are available at `RecGFI/real_world_evaluation/prediction_real_world_issues.csv`.
 
 The layout of files and folders for the package is shown below.
+
     .
     ├── data                                         # Data files
     │   ├── Statistics.png                           # Statistics of the data set
