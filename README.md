@@ -64,7 +64,7 @@ All automated processing is implemented using Python in an Anaconda environment 
     │   ├── RecGFI.py                                # Script to run baseline models
     │   └── wordcloud.py                             # Script to draw a word cloud for issue descriptions
     ├── real_world_evaluation                        # Files for RQ3
-    │   ├── prediction_real_world_issues.csv         # Issue responses for real world evaluation
+    │   └── prediction_real_world_issues.csv         # Issue responses for real world evaluation
     ├── LICENSE                                      # Licence for this replication package
     ├── Main.py                                      # Main entry script that preprocesses data, runs RecGFI and draws two word clouds
     ├── PAPER.pdf                                    # Our paper
