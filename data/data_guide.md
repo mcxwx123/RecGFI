@@ -1,10 +1,9 @@
 Run the following scripts with Python to get data for the first time point (t=0) / second time point (t=1) of issues.
     
 ```shell
-import os
-    
-current_work_dir = os.path.dirname(__file__) 
-with open(current_work_dir+'/issuedata.json') as f:
+import json
+
+with open('issuedata.json') as f:
     issuestr = json.load(f)
 issuedic = json.loads(issuestr)
 issuedata = issuedic['issuedata']
