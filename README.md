@@ -120,3 +120,10 @@ python Run_lime.py
 The whole script can **take up to one day to finish**. It may generate some warning messages during the run. After running `Run_lime.py`, several `*.mat` files will be generated in `RecGFI/intepretation/data`. These files are already provided in our git repository. The `*.m` files in `RecGFI/intepretation/draw_figs` can be executed with Matlab 2020b or higher version to draw the figures. However, Matlab is proprietary software. According to the requirments for "Resuable" badge, "Proprietary artifacts need not be included". Therefore, we do not intend to claim badges for the Matlab part of our replication package.
 
 As for **RQ3**, we save the status of involved issues in `real_world_evaluation/prediction_real_world_issues.csv`. 
+
+Note:
+
+data/repo_id_info.csv record the owner name and repository name for repository with repo_id (ID in GHTorrent), and
+data/issue_id_info.csv record the owner name, repository name, issue number and the number of commit from the issue closer in the repository for issue with issue_id (ID in GHTorrent).
+
+The two files can be used to locate the issues from data/issuedata.json on GitHub. Thus additional data of issues can be added for future research.
