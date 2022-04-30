@@ -80,7 +80,7 @@ We add two additional files for locating the issues from data/issuedata.json on 
 1. [data/repo_id_info.csv](data/repo_id_info.csv) records the owner name and repository name for repository with repo_id (ID in GHTorrent);
 2. [data/issue_id_info.csv](data/issue_id_info.csv) records the owner name, repository name, issue number and the number of commit from the issue closer in the repository for issue with issue_id (ID in GHTorrent).
 
-Thus, additional issue data can be retreived from GitHub for future research. For example, the [data/issue_id_info.csv](data/issue_id_info.csv) can serve as a ground truth dataset for evaluating different GFI recommendation approaches.
+Thus, additional issue data can be retreived from GitHub for future research. For example, the [data/issue_id_info.csv](data/issue_id_info.csv) can serve as a ground truth dataset for evaluating new GFI recommendation approaches which collects data and builds features entirely from GitHub.
 
 ## Required Skills and Environment
 
