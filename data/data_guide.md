@@ -71,6 +71,6 @@ Attributes:
         events: contains data of users who conduct the following events: 'labeled', 'subscribed', 'referenced', 'mentioned', 'closed', 'assigned', 
                'milestoned', 'unlabeled', 'moved_columns_in_project', 'locked', 'added_to_project', 'demilestoned', 'removed_from_project', 'unassigned', 
                'renamed', 'reopened', 'head_ref_force_pushed', 'transferred', 'unsubscribed', 'merged', 'head_ref_deleted', 'comment_deleted', 'review_requested', 
-               'connected', 'marked_as_duplicate'. Data of user: [userpronum,userstar,userallcmt,usercmt,userfoll,useralliss,useriss,userallpr,userpr,userissues]
+               'connected', 'marked_as_duplicate' and any of all event types. Data of user: [userpronum,userstar,userallcmt,usercmt,userfoll,useralliss,useriss,userallpr,userpr,userissues]
         commentbody: All issue comments
         commentusers: Features for all involved commenters, similar with 'events'
