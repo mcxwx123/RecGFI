@@ -13,6 +13,7 @@ for i in range(len(issuedata)):
 ```
 
 Attributes:
+
         issue_id, proid, owner_id, rpt_id, cls_id: Id of the issue, project, project owner, issue repoter, issue resolver on GHTorrent
         issuet: The time when the issue is created
         reft: The time when the issue is assigned or linked to a pull request
