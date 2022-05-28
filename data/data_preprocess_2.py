@@ -256,9 +256,7 @@ def data_preprocess2():
     Threshold=[0,1,2,3,4]
     current_work_dir = os.path.dirname(__file__) 
     with open(current_work_dir+'/issuedata.json') as f:
-        issuestr = json.load(f)
-    issuedic = json.loads(issuestr)
-    issuedata = issuedic['issuedata']
+        issuedata = json.load(f)
     lst=[]
     for i in range(len(issuedata)):
         lst.append(issuedata[i][1])
