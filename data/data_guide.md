@@ -4,9 +4,7 @@ Run the following scripts with Python to get data for the first time point (t=0)
 import json
 
 with open('issuedata.json') as f:
-    issuestr = json.load(f)
-issuedic = json.loads(issuestr)
-issuedata = issuedic['issuedata']
+    issuedata = json.load(f)
 lst=[]
 for i in range(len(issuedata)):
     lst.append(issuedata[i][t])
