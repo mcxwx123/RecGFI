@@ -1,6 +1,6 @@
 # Replication Package for ICSE 2022 Paper "Recommending Good First Issues in GitHub OSS Projects"
 
-This is the replication package for the ICSE 2022 paper *Recommending Good First Issues in GitHub OSS Projects*. It contains: 1) a dataset of 53,510 resolved issues; and 2) scripts to train different models and reproduce evaluation results, as described in the paper.
+This is the replication package for the ICSE 2022 paper [*Recommending Good First Issues in GitHub OSS Projects*](https://dl.acm.org/doi/pdf/10.1145/3510003.3510196). It contains: 1) a dataset of 53,510 resolved issues (file `issuedata.zip` in [Zenodo](https://zenodo.org/record/5881117)); and 2) scripts to train different models and reproduce evaluation results, as described in the paper.
 
 The package is stored in the git repository https://github.com/mcxwx123/RecGFI and permanently archived at [Zenodo](https://zenodo.org/record/5881117). To reproduce results in the paper, it is necessary to properly configure an Anaconda environment to run the scripts or use the VirtualBox VM Image we provide at [Zenodo](https://zenodo.org/record/5881117). 
 
