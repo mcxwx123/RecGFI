@@ -4,6 +4,23 @@ This is the replication package for the ICSE 2022 paper [*Recommending Good Firs
 
 The package is stored in the git repository https://github.com/mcxwx123/RecGFI and permanently archived at [Zenodo](https://zenodo.org/record/5881117). To reproduce results in the paper, it is necessary to properly configure an Anaconda environment to run the scripts or use the VirtualBox VM Image we provide at [Zenodo](https://zenodo.org/record/5881117). 
 
+**Update 2022.07.15**: We have released [an up-to-date GFI recommendation dataset](https://doi.org/10.5281/zenodo.6665931) (with issues until 2022.07) from our [GFI-Bot](https://github.com/osslab-pku/gfi-bot) project! This dataset is better structured, has clearer fields, and is easier to reuse. Please consider also use this dataset in your research, and we will greatly appreciate it if you can cite our two papers:
+
+```
+@inproceedings{xiao2022recommending,
+  title={Recommending good first issues in GitHub OSS projects},
+  author={Xiao, Wenxin and He, Hao and Xu, Weiwei and Tan, Xin and Dong, Jinhao and Zhou, Migahui},
+  booktitle={2022 IEEE/ACM 44th International Conference on Software Engineering (ICSE)},
+  pages={1830--1842},
+  year={2022},
+  organization={IEEE}
+}
+@article{gfi-bot,
+  title={GFI-Bot: Automated Good First Issue Recommendation on GitHub},
+  author={He, Hao and Su, Haonan and Xiao, Wenxin and He, Runzhi and Zhou, Minghui}
+}
+```
+
 ## Introduction
 
 In the ICSE 2022 paper, we propose **RecGFI**, an effective practical approach for automated recommendation of **Good First Issues** to OSS newcomers, which can be used to relieve maintainers’ burden and help newcomers onboard. 
