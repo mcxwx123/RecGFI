@@ -26,7 +26,6 @@ Attributes:
 
         title: Issue title
         body: Issue description
-        body: Issue description
         labels: The number of different labels ([GFI-signal, Bug, Test, Build, Doc, Enhancement, Coding, New feature, Major, Medium, Untriaged, Triaged])
 
         ---------- Background ----------
